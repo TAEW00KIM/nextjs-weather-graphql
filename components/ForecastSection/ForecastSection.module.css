@@ -1,0 +1,29 @@
+.section {
+  margin: 20px 0 0;
+  background: var(--color-white);
+  border: 1px solid #DFDFDF;
+  border-radius: 6px;
+  overflow: hidden;
+  min-height: 480px;
+}
+
+.title {
+  margin: 0;
+  padding: 0 30px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: var(--color-text-dark);
+  border-bottom: 1px solid #DFDFDF;
+  box-sizing: border-box;
+}
+
+.list {
+  /* ForecastDay items stack here */
+}
