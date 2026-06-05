@@ -42,13 +42,11 @@ button {
   font-family: inherit;
 }
 
-/* 반응형 컨테이너: 디자인 프레임 1280 / 콘텐츠 1200 (좌우 40 여백) */
 .layout-container {
   width: 100%;
   padding: 0 40px;
 }
 
-/* ≥1280px: 콘텐츠 중앙 정렬, 최대 폭 고정 */
 @media (min-width: 1280px) {
   .layout-container {
     max-width: 1280px;
@@ -56,7 +54,6 @@ button {
   }
 }
 
-/* <800px: 최소 폭 800 고정 + 가로 스크롤 */
 @media (max-width: 799px) {
   html,
   body {
