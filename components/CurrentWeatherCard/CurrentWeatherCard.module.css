@@ -11,6 +11,8 @@
   border-radius: 6px;
   border: 1px solid #DFDFDF;
   box-sizing: border-box;
+  letter-spacing: -0.6px;
+  line-height: 110%;
 }
 
 .left {
@@ -38,11 +40,8 @@
 
 .datetime {
   display: block;
-  font-family: 'Pretendard', sans-serif;
   font-size: 24px;
   font-weight: 700;
-  line-height: 110%;
-  letter-spacing: -0.6px;
   color: #555555;
 }
 
@@ -55,21 +54,15 @@
 
 .cityName {
   margin: 0;
-  font-family: 'Pretendard', sans-serif;
   font-size: 36px;
   font-weight: 700;
-  line-height: 110%;
-  letter-spacing: -0.6px;
   color: #3D3D3D;
   white-space: nowrap;
 }
 
 .population {
-  font-family: 'Pretendard', sans-serif;
   font-size: 14px;
   font-weight: 600;
-  line-height: 110%;
-  letter-spacing: -0.6px;
   color: var(--color-text-gray);
 }
 
@@ -83,22 +76,17 @@
 
 .temp {
   display: block;
-  font-family: 'Pretendard', sans-serif;
   font-size: 50px;
   font-weight: 700;
-  line-height: 110%;
-  letter-spacing: -0.6px;
   text-align: right;
   color: #3D3D3D;
 }
 
 .meta {
   margin: 0;
-  font-family: 'Pretendard', sans-serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 140%;
-  letter-spacing: -0.6px;
   text-align: right;
   color: var(--color-text-gray);
 }
