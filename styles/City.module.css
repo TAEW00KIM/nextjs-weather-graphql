@@ -1,0 +1,50 @@
+.main {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  padding: 40px 0 80px;
+}
+
+.wrapper {
+  /* uses .layout-container breakpoints from globals.css */
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 32px 32px;
+}
+
+.globeIcon {
+  margin-bottom: 10px;
+  display: flex;
+  cursor: pointer;
+}
+
+.globeIcon * {
+  cursor: pointer;
+}
+
+.title {
+  margin: 0;
+  width: 570px;
+  font-family: "Pretendard", sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 110%;
+  letter-spacing: -0.6px;
+  text-align: center;
+  color: #3d3d3d;
+}
+
+.loading {
+  text-align: center;
+  padding: 24px;
+  color: var(--color-text-gray);
+  font-size: 14px;
+}
