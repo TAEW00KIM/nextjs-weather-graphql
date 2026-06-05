@@ -52,7 +52,9 @@ export default function CityPage({ currentWeather, forecast, city }) {
 
 export async function getStaticPaths() {
   return {
-    paths: CITIES.map((city) => ({ params: { city } })),
+    paths: process.env.OPENWEATHER_API_KEY
+      ? CITIES.map((city) => ({ params: { city } }))
+      : [],
     fallback: false,
   };
 }
