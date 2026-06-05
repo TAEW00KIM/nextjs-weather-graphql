@@ -1,0 +1,31 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 50px;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.6px;
+  color: #FF0045;
+  background: #FFFFFF;
+  border: 1px solid #FF0045;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+}
+
+.button:hover {
+  background-color: #FFD2CC;
+  border-color: #B70055;
+}
+
+.button:active,
+.button.selected {
+  background-color: #FFABA1;
+  border-color: #FF0045;
+}
