@@ -2,8 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { GET_CURRENT_WEATHER, GET_FORECAST } from "../graphql/queries";
+import { createApolloClient } from "../lib/apolloClient";
 import { CITIES } from "../lib/cities";
-import { resolvers } from "../graphql/resolvers";
 import CurrentWeatherCard from "../components/CurrentWeatherCard/CurrentWeatherCard";
 import styles from "../styles/City.module.css";
 
@@ -50,25 +51,29 @@ export default function CityPage({ currentWeather, forecast, city }) {
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: CITIES.map((city) => ({ params: { city } })),
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params, req }) {
   const { city } = params;
 
+  if (!CITIES.includes(city)) {
+    return { notFound: true };
+  }
+
+  const protocol = req.headers["x-forwarded-proto"] ?? "http";
+  const host = req.headers.host;
+  const client = createApolloClient(`${protocol}://${host}/api/graphql`);
+
   try {
-    const [currentWeather, forecast] = await Promise.all([
-      resolvers.Query.currentWeather(null, { city }),
-      resolvers.Query.forecast(null, { city }),
+    const [weatherResult, forecastResult] = await Promise.all([
+      client.query({ query: GET_CURRENT_WEATHER, variables: { city } }),
+      client.query({ query: GET_FORECAST, variables: { city } }),
     ]);
 
     return {
-      props: { currentWeather, forecast, city },
-      revalidate: 600,
+      props: {
+        currentWeather: weatherResult.data.currentWeather,
+        forecast: forecastResult.data.forecast,
+        city,
+      },
     };
   } catch (err) {
     console.error("Failed to fetch weather data:", err.message);
