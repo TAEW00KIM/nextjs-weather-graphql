@@ -29,7 +29,8 @@ export default function CurrentWeatherCard({ weather }) {
       <div className={styles.right}>
         <strong className={styles.temp}>{temp}℃</strong>
         <p className={styles.meta}>
-          Feels like {feelsLike}℃ {description} 풍속 {windSpeed}m/s 습도 {humidity}%
+          Feels like {feelsLike}℃ {description}<br />
+          풍속 {windSpeed}m/s 습도 {humidity}%
         </p>
       </div>
     </section>
