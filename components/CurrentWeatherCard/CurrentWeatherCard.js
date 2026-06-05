@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { owmIconUrl } from '../../lib/weatherService';
 import styles from './CurrentWeatherCard.module.css';
 
@@ -8,7 +9,7 @@ export default function CurrentWeatherCard({ weather }) {
     <section className={styles.card}>
       <div className={styles.left}>
         <div className={styles.iconCircle}>
-          <img
+          <Image
             src={owmIconUrl(icon)}
             alt={description}
             width={50}
