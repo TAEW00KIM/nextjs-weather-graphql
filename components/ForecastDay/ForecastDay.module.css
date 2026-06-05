@@ -39,6 +39,7 @@
 
 .chevron.open {
   transform: rotate(180deg);
+  color: #3d3d3d;
 }
 
 .slots {
