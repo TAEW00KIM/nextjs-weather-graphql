@@ -2,6 +2,8 @@
 
 Open Weather API를 사용하여 도시별 현재 날씨와 5일 예보를 보여주는 웹 애플리케이션입니다.
 
+**Live Demo**: https://weather-app-beta-two-73.vercel.app
+
 ## 기술 스택
 
 - **Next.js 12** — 프론트엔드 및 백엔드
