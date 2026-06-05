@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Image from 'next/image';
 import { owmIconUrl } from '../../lib/weatherService';
 import styles from './ForecastDay.module.css';
 
@@ -35,7 +36,7 @@ export default function ForecastDay({ date, slots }) {
             <li key={i} className={styles.slot}>
               <div className={styles.slotLeft}>
                 <span className={styles.iconCircle}>
-                  <img
+                  <Image
                     src={owmIconUrl(slot.icon)}
                     alt={slot.description}
                     width={36}

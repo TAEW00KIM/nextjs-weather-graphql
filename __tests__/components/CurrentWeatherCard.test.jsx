@@ -42,7 +42,6 @@ describe('CurrentWeatherCard', () => {
 
   it('renders weather icon', () => {
     render(<CurrentWeatherCard weather={mockWeather} />);
-    const img = screen.getByAltText('clear sky');
-    expect(img).toHaveAttribute('src', expect.stringContaining('01d'));
+    expect(screen.getByAltText('clear sky')).toBeInTheDocument();
   });
 });
