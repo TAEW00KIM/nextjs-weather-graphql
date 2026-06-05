@@ -47,9 +47,9 @@
 
 .cityBlock {
   display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  gap: 6px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
 }
 
 .cityName {
