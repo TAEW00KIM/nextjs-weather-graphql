@@ -62,6 +62,42 @@ npm run dev
 | 800px ~ 1280px | width 100% |
 | 800px 미만 | 최소 너비 800px 고정, 가로 스크롤 |
 
+## 스크립트
+
+```bash
+npm run dev      # 개발 서버
+npm run build    # 프로덕션 빌드
+npm run start    # 프로덕션 서버
+npm run lint     # ESLint 검사
+npm test         # Jest 단위 테스트
+```
+
+## GraphQL 엔드포인트
+
+```
+POST /api/graphql
+```
+
+`currentWeather(city: String!)` — 현재 날씨 조회  
+`forecast(city: String!)` — 5일 예보 조회
+
+## 테스트
+
+Jest + React Testing Library로 구현했습니다.
+
+- `graphql/formatters` — timezone-aware 날짜/시간 포맷 단위 테스트
+- `graphql/resolvers` — API 매핑, population 처리, forecast 그룹핑 테스트
+- `CurrentWeatherCard` — 렌더링, population 조건부 표시 테스트
+- `ForecastDay` — 아코디언 토글, aria-expanded 테스트
+
+## 배포
+
+Vercel 배포 시 환경변수를 등록해야 합니다.
+
+```
+OPENWEATHER_API_KEY=your_api_key_here
+```
+
 ## 설계 결정
 
 - **인구수(`population`)** — OWM Current Weather API에는 인구수가 없고 5 day Forecast API 응답의 `city.population`에만 포함되어 있습니다. `currentWeather` resolver에서 두 API를 `Promise.all`로 병렬 호출해 population을 `CurrentWeather` 타입에 매핑했습니다.
